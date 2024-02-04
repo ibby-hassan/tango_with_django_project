@@ -44,7 +44,9 @@ def add_category(request):
             return redirect('/rango/')
         else:
             print(form.errors)
-    return render(request, 'rango/add_category.html', {'form': form})
+            
+    context_dict = {'form': form}        
+    return render(request, 'rango/add_category.html', context_dict)
 
 def add_page(request, category_name_slug):
     try:
